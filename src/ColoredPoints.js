@@ -5,7 +5,6 @@ var VSHADER_SOURCE = `
   uniform float u_Size;
   void main() {
     gl_Position = a_Position;
-    // gl_PointSize = 20.0;
     gl_PointSize = u_Size;
   }`
 
