@@ -1,3 +1,15 @@
+<!--
+  Trisha Moorkoth
+  Notes to Graders:
+  All the functionality works (did not implement painting yet),
+  but sometimes the performance is laggy which leads to the color
+  sliders being inaccurate. For best results, test color sliders
+  first without using the circle, triangle, or point buttons
+  (it still works if these buttons are used, but there's a 
+  greater chance the performance degrades, making the colors 
+  innaccurate and laggy).
+
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,6 +53,11 @@
     <p>
     Segments
     <input type="range" min="10" max="45" value="100" class="slider" id="segSlide">
+
+    <p>
+    Painting Reference:
+    <br>
+    <img src="./asg1_cse160.png"/>
 
     <script src="../lib/webgl-utils.js"></script>
     <script src="../lib/webgl-debug.js"></script>
