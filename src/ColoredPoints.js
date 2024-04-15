@@ -72,6 +72,7 @@ function connectVariablesToGLSL() {
 const POINT = 0;
 const TRIANGLE = 1;
 const CIRCLE = 2;
+const GRADIENT = 3;
 
 // Globals related to UI elements
 // starting value is white
@@ -96,7 +97,9 @@ function addActionsForHtmlUI() {
   // triangle button
   document.getElementById('triangle').onclick = function() {g_selectedType = TRIANGLE};
   // circle button
-  document.getElementById('circle').onclick = function() {g_selectedType = CIRCLE};  
+  document.getElementById('circle').onclick = function() {g_selectedType = CIRCLE};
+  // star button
+  document.getElementById('gradient').onclick = function() {g_selectedType = GRADIENT};    
 
   
   // color slider events
@@ -146,11 +149,14 @@ function click(ev) {
   } else if (g_selectedType == TRIANGLE) {
     point = new Triangle();
     console.log("type is now triangle");
-  } else {
+  } else if (g_selectedType == CIRCLE) {
     point = new Circle();
     // update the segments
     point.segments = g_selectedSeg;
     console.log("type is now circle");
+  } else {
+    point = new Gradient();
+    console.log("type is now grad");
   }
   point.position = [x, y];
   point.color = g_selectedColor.slice();
